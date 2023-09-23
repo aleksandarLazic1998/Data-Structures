@@ -148,6 +148,7 @@ class SinglyLinkedList {
 		let node = this.head;
 		this.head = this.tail;
 		this.tail = node;
+
 		let next;
 		let prev = null;
 
@@ -159,6 +160,16 @@ class SinglyLinkedList {
 		}
 		return this;
 	}
+
+	print() {
+		const arr = [];
+		let current = this.head;
+		while (current) {
+			arr.push(current.val);
+			current = current.next;
+		}
+		return arr;
+	}
 }
 
 const list = new SinglyLinkedList();
@@ -169,5 +180,4 @@ list.push(3);
 list.push(4);
 list.push(5);
 list.push(6);
-
-console.log(list.reverse());
+console.log(list.print());
